@@ -154,25 +154,6 @@ touch-action:none;
 </div>
 
 </div>
-
-<div id="page3" class="page" style="display:none;">
-
-    <img src="address.jpg" class="bg">
-
-    <div class="menu" style="top:25%;left:20px;">
-
-        <button onclick="window.open('https://www.google.com/maps?q=5.9556561,102.2503899','_blank')">
-            OPEN MAP
-        </button>
-
-        <button onclick="backToMenu()">
-            BACK
-        </button>
-
-    </div>
-
-</div>
-    
 <div id="bankPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:9999;">
   <div style="background:#fff;width:90%;max-width:350px;margin:40px auto;padding:15px;border-radius:10px;text-align:center;">
     <img src="qrbank.jpg" style="width:100%;border-radius:8px;">
@@ -224,6 +205,21 @@ cover.onclick = function () {
 };
 document.getElementById("address").onclick=function(){
 
+   if(confirm(
+"PS55,\n"+
+"Kg. Banggol Tebakang,\n"+
+"16450 Ketereh,\n"+
+"Kota Bharu,\n"+
+"Kelantan.\n\n"+
+"Buka lokasi di Google Maps?"
+)){ 
+    music.pause();
+music.currentTime = 0;
+        window.open("https://www.google.com/maps?q=5.9556561,102.2503899","_blank");
+
+    }
+
+};
 
 document.getElementById("whatsapp").onclick=function(){
 music.pause();
@@ -239,10 +235,6 @@ music.currentTime = 0;
     }
 };
 
- document.getElementById("address").onclick=function(){
-    page2.style.display = "none";
-    document.getElementById("page3").style.display = "block";
-};   
 document.getElementById("bank").onclick=function(){
     document.getElementById("bankPopup").style.display="block";
 };
